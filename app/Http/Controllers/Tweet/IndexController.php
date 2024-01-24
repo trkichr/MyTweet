@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Tweet;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
+use Illuminate\View\Factory;
 
 class IndexController extends Controller
 {
@@ -14,8 +14,8 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, Factory $factory)
     {
-        return View::make('tweet.index', ['name' => 'laravel']);
+        return $factory->make('tweet.index', ['name' => 'laravel']);
     }
 }
