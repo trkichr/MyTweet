@@ -15,6 +15,8 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('tweet.index')->with('name', 'laravel');
+        return view('tweet.index')
+                    ->with('name', 'laravel')
+                    ->with('version', '8');
     }
 }
